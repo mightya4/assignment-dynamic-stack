@@ -8,9 +8,10 @@ int main() {
     char select = 0;
     stack_s s = {0};
     void *tmp_ptr = NULL;
+    int is_true = 1;
     
     
-    while (1) {
+    while (is_true) {
         printf("A. Add item (push)\n");
         printf("B. Remove item (pop)\n");
         printf("C. Print all items\n");
@@ -35,7 +36,16 @@ int main() {
                     print_stack(&s);
                     break;
                 case 'e':
-                    "Successfully exiting program.\n";
+                    if(tmp_ptr!=NULL) {
+                        free(tmp_ptr);
+                        tmp_ptr = NULL;
+                        if(s.data != NULL) {
+                            free_elem(&s);
+                        }
+                    }
+                    
+                    is_true = 0;
+                    printf("Successfully exiting program.\n");
                     break;
                 default:
                     printf("Selection is not valid.\n");
