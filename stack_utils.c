@@ -16,10 +16,6 @@ int push(stack_s *stack, void *data) {
     if(stack->data == NULL) {
         return 1;
     }
-    //assign the new data pointer to the newly created space
-    stack->data[stack->num_items] = data;
-    stack->num_items++;
-
 return 0;
 }
 

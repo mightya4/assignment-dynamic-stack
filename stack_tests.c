@@ -19,8 +19,6 @@ int main() {
 
         scanf("%c", &select);
         while (getchar() != '\n'); //empties the buffer
-
-        
             switch(select) {
                 case 'a':
                     push(&s, get_input());
